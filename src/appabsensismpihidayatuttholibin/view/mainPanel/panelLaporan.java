@@ -4,18 +4,57 @@
  */
 package appabsensismpihidayatuttholibin.view.mainPanel;
 
+import appabsensismpihidayatuttholibin.view.panelTambahan.perKelasLaporan;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
+
 /**
  *
  * @author ASUS
  */
 public class panelLaporan extends javax.swing.JPanel {
+private perKelasLaporan popupTanggal;
 
     /**
      * Creates new form panelLaporan
      */
     public panelLaporan() {
         initComponents();
+        customTable();
     }
+    
+    //custom untuk header tabel
+    private void customTable() {
+    jTable1.setRowHeight(40);
+
+    JTableHeader header = jTable1.getTableHeader();
+    header.setPreferredSize(new Dimension(100, 40));
+
+    header.setDefaultRenderer(new DefaultTableCellRenderer() {
+        @Override
+        public Component getTableCellRendererComponent(
+                JTable table, Object value,
+                boolean isSelected, boolean hasFocus,
+                int row, int column) {
+
+            JLabel label = (JLabel) super.getTableCellRendererComponent(
+                    table, value, isSelected, hasFocus, row, column);
+
+            label.setBackground(new Color(42, 76, 102));
+            label.setForeground(Color.WHITE);
+            label.setFont(new Font("Segoe UI", Font.BOLD, 14));
+            label.setOpaque(true);
+
+            return label;
+        }
+    });
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,6 +65,7 @@ public class panelLaporan extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -145,6 +185,7 @@ public class panelLaporan extends javax.swing.JPanel {
 
         BtnTanggal.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         BtnTanggal.setText("Tanggal");
+        BtnTanggal.addActionListener(this::BtnTanggalActionPerformed);
         jPanel8.add(BtnTanggal);
 
         BtnBulan.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
@@ -234,14 +275,14 @@ public class panelLaporan extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "0000000001", "Ahmad", "Laki-Laki", "0000000001", "7A", null},
-                {"2", "0000000002", "Budi", "Laki-Laki", "01-01-2001", "Ngawi", "085111111111"},
-                {"3", "0000000003", "Caca", "Perempuan", "01-02-2001", "Nganjuk", "085222222222"},
-                {"4", "0000000004", "Faiza", "Perempuan", "02-02-2001", "Loceret", "085333333333"},
-                {"5", "0000000005", "Siti", "Perempuan", "03-02-2001", "Berbek", "085444444444"}
+                {"1", "AB001", "01-01-2026", "Ahmad", "0000000001", "7A", "Hadir"},
+                {"2", "AB002", "01-01-2026", "Budi", "0000000002", "7A", "Hadir"},
+                {"3", "AB003", "02-02-2026", "Caca", "0000000003", "8B", "Sakit"},
+                {"4", "AB004", "02-02-2026", "Faiza", "0000000004", "8B", "Hadir"},
+                {"5", "AB005", "03-03-2026", "Siti", "0000000005", "9C", "Hadir"}
             },
             new String [] {
-                "No", "ID Absensi", "Tanggal", "Nama", "Jenis Kelamin", "Kelas", "Status"
+                "No", "ID Absensi", "Tanggal", "Nama", "NISN", "Kelas", "Status"
             }
         ) {
             Class[] types = new Class [] {
@@ -258,10 +299,6 @@ public class panelLaporan extends javax.swing.JPanel {
         jTable1.setShowGrid(false);
         jTable1.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setMinWidth(0);
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(2);
-        }
 
         jPanel7.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
@@ -269,6 +306,10 @@ public class panelLaporan extends javax.swing.JPanel {
 
         add(jPanel5, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnTanggalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTanggalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnTanggalActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -289,6 +330,7 @@ public class panelLaporan extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JPanel panelAtas;

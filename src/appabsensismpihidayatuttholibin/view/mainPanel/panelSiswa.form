@@ -221,6 +221,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Tambah"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTambahActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="BtnUbah">
                   <Properties>
@@ -369,118 +372,54 @@
                       <Font name="Poppins" size="16" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="8" rowCount="12">
+                      <Table columnCount="8" rowCount="4">
                         <Column editable="true" title="No" type="java.lang.String">
-                          <Data value="1"/>
                           <Data value="2"/>
                           <Data value="3"/>
                           <Data value="4"/>
                           <Data value="5"/>
-                          <Data value="6"/>
-                          <Data value="7"/>
-                          <Data value="8"/>
-                          <Data value="9"/>
-                          <Data value="10"/>
-                          <Data value="11"/>
-                          <Data value="12"/>
                         </Column>
                         <Column editable="true" title="NISN" type="java.lang.String">
-                          <Data value="0000000001"/>
                           <Data value="0000000002"/>
                           <Data value="0000000003"/>
                           <Data value="0000000004"/>
                           <Data value="0000000005"/>
-                          <Data value="0000000006"/>
-                          <Data value="0000000007"/>
-                          <Data value="0000000008"/>
-                          <Data value="0000000009"/>
-                          <Data value="0000000010"/>
-                          <Data value="0000000011"/>
-                          <Data value="0000000012"/>
                         </Column>
                         <Column editable="true" title="Nama" type="java.lang.String">
-                          <Data value="Ahmad"/>
                           <Data value="Budi"/>
                           <Data value="Caca"/>
                           <Data value="Faiza"/>
                           <Data value="Siti"/>
-                          <Data value="Zaidan"/>
-                          <Data value="Abidin"/>
-                          <Data value="Arifin"/>
-                          <Data value="Andika"/>
-                          <Data value="Burhan"/>
-                          <Data value="Fatimah"/>
-                          <Data value="Azizah"/>
                         </Column>
                         <Column editable="true" title="Jenis Kelamin" type="java.lang.String">
                           <Data value="Laki-Laki"/>
-                          <Data value="Laki-Laki"/>
                           <Data value="Perempuan"/>
-                          <Data value="Perempuan"/>
-                          <Data value="Perempuan"/>
-                          <Data value="Laki-Laki"/>
-                          <Data value="Laki-Laki"/>
-                          <Data value="Laki-Laki"/>
-                          <Data value="Laki-Laki"/>
-                          <Data value="Laki-Laki"/>
                           <Data value="Perempuan"/>
                           <Data value="Perempuan"/>
                         </Column>
                         <Column editable="true" title="Tanggal Lahir" type="java.lang.String">
-                          <Data value="0000000001"/>
                           <Data value="01-01-2001"/>
                           <Data value="01-02-2001"/>
                           <Data value="02-02-2001"/>
                           <Data value="03-02-2001"/>
-                          <Data value="01-03-2001"/>
-                          <Data value="03-01-2001"/>
-                          <Data value="04-01-2001"/>
-                          <Data value="09-05-2001"/>
-                          <Data value="10-11-2001"/>
-                          <Data value="01-01-2002"/>
-                          <Data value="12-12-2001"/>
                         </Column>
                         <Column editable="true" title="Alamat" type="java.lang.String">
-                          <Data value="7A"/>
                           <Data value="Ngawi"/>
                           <Data value="Nganjuk"/>
                           <Data value="Loceret"/>
                           <Data value="Berbek"/>
-                          <Data value="Kuncir"/>
-                          <Data value="Ngetos"/>
-                          <Data value="Nganjuk"/>
-                          <Data value="Madiun"/>
-                          <Data value="Kertosono"/>
-                          <Data value="Sawahan"/>
-                          <Data value="Ponorogo"/>
                         </Column>
                         <Column editable="true" title="No Telepon" type="java.lang.String">
-                          <Data value="null"/>
                           <Data value="085111111111"/>
                           <Data value="085222222222"/>
                           <Data value="085333333333"/>
                           <Data value="085444444444"/>
-                          <Data value="085555555555555"/>
-                          <Data value="085666666666"/>
-                          <Data value="085777777777"/>
-                          <Data value="085888888888"/>
-                          <Data value="085999999999"/>
-                          <Data value="085101010101"/>
-                          <Data value="085121212121"/>
                         </Column>
                         <Column editable="true" title="Kelas" type="java.lang.String">
                           <Data value="7A"/>
-                          <Data value="7A"/>
                           <Data value="8B"/>
                           <Data value="8B"/>
                           <Data value="9C"/>
-                          <Data value="9C"/>
-                          <Data value="7B"/>
-                          <Data value="7B"/>
-                          <Data value="8A"/>
-                          <Data value="8A"/>
-                          <Data value="9D"/>
-                          <Data value="9D"/>
                         </Column>
                       </Table>
                     </Property>

@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.JTableHeader;
+import appabsensismpihidayatuttholibin.view.popupTambah.tambahAbsensiManual;
 
 /**
  *
@@ -27,6 +28,7 @@ public class panelAbsensiManual extends javax.swing.JPanel {
         customTable();
     }
     
+    //custom untuk header tabel
     private void customTable() {
     jTable1.setRowHeight(40);
 
@@ -52,6 +54,16 @@ public class panelAbsensiManual extends javax.swing.JPanel {
         }
     });
 }
+    
+    //membuat method untuk memanggil pop up JDialog
+    private void popupTambah(java.awt.event.ActionEvent evt){
+        
+        tambahAbsensiManual dialog = new tambahAbsensiManual(
+        (java.awt.Frame) javax.swing.SwingUtilities.getWindowAncestor(this),true
+        );
+        dialog.setLocationRelativeTo(null);
+        dialog.setVisible(true);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -80,6 +92,7 @@ public class panelAbsensiManual extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
+        setMinimumSize(new java.awt.Dimension(1330, 780));
         setLayout(new java.awt.BorderLayout());
 
         jPanel1.setBackground(new java.awt.Color(201, 223, 237));
@@ -160,6 +173,7 @@ public class panelAbsensiManual extends javax.swing.JPanel {
         BtnTambah.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
         BtnTambah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/icons8_plus.png"))); // NOI18N
         BtnTambah.setText("Tambah");
+        BtnTambah.addActionListener(this::BtnTambahActionPerformed);
         jPanel6.add(BtnTambah);
 
         BtnUbah.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
@@ -253,11 +267,10 @@ public class panelAbsensiManual extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "0000000001", "Ahmad", "Laki-Laki", "0000000001", "7A", null},
-                {"2", "0000000002", "Budi", "Laki-Laki", "01-01-2001", "Ngawi", "085111111111"},
-                {"3", "0000000003", "Caca", "Perempuan", "01-02-2001", "Nganjuk", "085222222222"},
-                {"4", "0000000004", "Faiza", "Perempuan", "02-02-2001", "Loceret", "085333333333"},
-                {"5", "0000000005", "Siti", "Perempuan", "03-02-2001", "Berbek", "085444444444"}
+                {"2", "0000000002", "01-01-2026", "Budi", "Laki-Laki", "7A", "Hadir"},
+                {"3", "0000000003", "01-01-2026", "Caca", "Perempuan", "7B", "Hadir"},
+                {"4", "0000000004", "01-01-2026", "Faiza", "Perempuan", "7B", "Hadir"},
+                {"5", "0000000005", "01-01-2026", "Siti", "Perempuan", "7A", "Hadir"}
             },
             new String [] {
                 "No", "ID Absensi", "Tanggal", "Nama", "Jenis Kelamin", "Kelas", "Status"
@@ -297,6 +310,11 @@ public class panelAbsensiManual extends javax.swing.JPanel {
 
         add(jPanel5, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahActionPerformed
+        // TODO add your handling code here:
+        popupTambah(evt);
+    }//GEN-LAST:event_BtnTambahActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

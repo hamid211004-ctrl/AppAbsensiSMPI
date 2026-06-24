@@ -4,6 +4,16 @@
  */
 package appabsensismpihidayatuttholibin.view.mainPanel;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
+import appabsensismpihidayatuttholibin.view.popupTambah.tambahPengguna;
+
 /**
  *
  * @author ASUS
@@ -15,6 +25,43 @@ public class panelPengguna extends javax.swing.JPanel {
      */
     public panelPengguna() {
         initComponents();
+        customTable();
+    }
+    //custom untuk header tabel
+    private void customTable() {
+    jTable1.setRowHeight(40);
+
+    JTableHeader header = jTable1.getTableHeader();
+    header.setPreferredSize(new Dimension(100, 40));
+
+    header.setDefaultRenderer(new DefaultTableCellRenderer() {
+        @Override
+        public Component getTableCellRendererComponent(
+                JTable table, Object value,
+                boolean isSelected, boolean hasFocus,
+                int row, int column) {
+
+            JLabel label = (JLabel) super.getTableCellRendererComponent(
+                    table, value, isSelected, hasFocus, row, column);
+
+            label.setBackground(new Color(42, 76, 102));
+            label.setForeground(Color.WHITE);
+            label.setFont(new Font("Segoe UI", Font.BOLD, 14));
+            label.setOpaque(true);
+
+            return label;
+        }
+    });
+}
+    
+    //membuat method untuk memanggil pop up JDialog
+    private void popupTambah(java.awt.event.ActionEvent evt){
+        
+        tambahPengguna dialog = new tambahPengguna(
+        (java.awt.Frame) javax.swing.SwingUtilities.getWindowAncestor(this),true
+        );
+        dialog.setLocationRelativeTo(null);
+        dialog.setVisible(true);
     }
 
     /**
@@ -124,6 +171,7 @@ public class panelPengguna extends javax.swing.JPanel {
         BtnTambah.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
         BtnTambah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/icons8_plus.png"))); // NOI18N
         BtnTambah.setText("Tambah");
+        BtnTambah.addActionListener(this::BtnTambahActionPerformed);
         jPanel6.add(BtnTambah);
 
         BtnUbah.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
@@ -145,7 +193,7 @@ public class panelPengguna extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAtasLayout.createSequentialGroup()
-                .addContainerGap(848, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -217,11 +265,9 @@ public class panelPengguna extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "AB001", "01-01-2026", "Ahmad", null, "0000000001"},
-                {"2", "AB002", "01-01-2026", "Budi", null, "0000000002"},
-                {"3", "AB003", "02-02-2026", "Caca", null, "0000000003"},
-                {"4", "AB004", "02-02-2026", "Faiza", null, "0000000004"},
-                {"5", "AB005", "03-03-2026", "Siti", null, "0000000005"}
+                {"1", "AB001", "Ahmad", "Ahmad", "12345678", "Admin"},
+                {"2", "AB002", "Budi", "Budi", "09876543", "Guru"},
+                {"3", "AB003", "Caca", "Caca", "87654321", "Guru"}
             },
             new String [] {
                 "No", "ID Pengguna", "Nama", "Email", "Password", "Role"
@@ -252,6 +298,11 @@ public class panelPengguna extends javax.swing.JPanel {
 
         add(jPanel5, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahActionPerformed
+        // TODO add your handling code here:
+        popupTambah(evt);
+    }//GEN-LAST:event_BtnTambahActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

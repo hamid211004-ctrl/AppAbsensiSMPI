@@ -19,6 +19,14 @@ public class tambahPengguna extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    void bersih(){
+        tPengguna.setText("ID Pengguna");
+        tNama.setText("Masukkan Username");
+        tEmail.setText("Masukkan Email");
+        tPassword.setText("Masukkan Password");
+        tVerifikasi.setText("Verifikasi");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -58,6 +66,7 @@ public class tambahPengguna extends javax.swing.JDialog {
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel3.setBackground(new java.awt.Color(229, 234, 239));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -270,6 +279,14 @@ public class tambahPengguna extends javax.swing.JDialog {
         tPengguna.setForeground(new java.awt.Color(114, 114, 114));
         tPengguna.setText("ID Pengguna");
         tPengguna.setPreferredSize(new java.awt.Dimension(71, 35));
+        tPengguna.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tPenggunaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tPenggunaFocusLost(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -283,8 +300,17 @@ public class tambahPengguna extends javax.swing.JDialog {
 
         tNama.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         tNama.setForeground(new java.awt.Color(114, 114, 114));
-        tNama.setText("Masukkan Nama Guru");
+        tNama.setText("Masukkan  Username");
         tNama.setPreferredSize(new java.awt.Dimension(71, 35));
+        tNama.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tNamaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tNamaFocusLost(evt);
+            }
+        });
+        tNama.addActionListener(this::tNamaActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -301,6 +327,14 @@ public class tambahPengguna extends javax.swing.JDialog {
         tPassword.setText("Masukkan Password");
         tPassword.setMinimumSize(new java.awt.Dimension(64, 35));
         tPassword.setPreferredSize(new java.awt.Dimension(64, 35));
+        tPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tPasswordFocusLost(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -315,6 +349,14 @@ public class tambahPengguna extends javax.swing.JDialog {
         tVerifikasi.setForeground(new java.awt.Color(114, 114, 114));
         tVerifikasi.setText("Verifikasi");
         tVerifikasi.setPreferredSize(new java.awt.Dimension(72, 35));
+        tVerifikasi.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tVerifikasiFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tVerifikasiFocusLost(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -329,6 +371,14 @@ public class tambahPengguna extends javax.swing.JDialog {
         tEmail.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         tEmail.setForeground(new java.awt.Color(114, 114, 114));
         tEmail.setText("Masukkan Email");
+        tEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tEmailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tEmailFocusLost(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -391,8 +441,97 @@ public class tambahPengguna extends javax.swing.JDialog {
 
     private void lCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lCloseMouseClicked
         // TODO add your handling code here:
-        System.exit(0);
+        dispose();
     }//GEN-LAST:event_lCloseMouseClicked
+
+    private void tNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tNamaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tNamaActionPerformed
+
+    
+    //Memberi fokus gained agar tulisan di text field kosong saat di klik
+    private void tPenggunaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tPenggunaFocusGained
+        // TODO add your handling code here:
+        String ID = tPengguna.getText();
+        if(ID.equals("ID Pengguna")){
+            tPengguna.setText("");
+        }
+    }//GEN-LAST:event_tPenggunaFocusGained
+
+    private void tNamaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tNamaFocusGained
+        // TODO add your handling code here:
+        String nama = tNama.getText();
+        if(nama.equals("Masukkan Username")){
+            tNama.setText("");
+        }
+    }//GEN-LAST:event_tNamaFocusGained
+
+    private void tEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tEmailFocusGained
+        // TODO add your handling code here:
+        String email = tEmail.getText();
+        if(email.equals("Masukkan Email")){
+            tEmail.setText("");
+        }
+    }//GEN-LAST:event_tEmailFocusGained
+
+    private void tPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tPasswordFocusGained
+        // TODO add your handling code here:
+        String password = tPassword.getText();
+        if(password.equals("Masukkan Password")){
+            tPassword.setText("");
+        }
+    }//GEN-LAST:event_tPasswordFocusGained
+
+    private void tVerifikasiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tVerifikasiFocusGained
+        // TODO add your handling code here:
+        String verif = tVerifikasi.getText();
+        if(verif.equals("Verifikasi")){
+            tVerifikasi.setText("");
+        }
+    }//GEN-LAST:event_tVerifikasiFocusGained
+
+    
+    //Memberi fokus lost agar tulisan di text field kosong saat di klik
+    //dan kembali lagi jika tidak jadi dinputkan
+    private void tPenggunaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tPenggunaFocusLost
+        // TODO add your handling code here:
+        String ID = tPengguna.getText();
+        if(ID.equals("")||ID.equals("ID Pengguna")){
+            tPengguna.setText("ID Pengguna");
+        }
+    }//GEN-LAST:event_tPenggunaFocusLost
+
+    private void tNamaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tNamaFocusLost
+        // TODO add your handling code here:
+        String nama = tNama.getText();
+        if(nama.equals("")||nama.equals("Masukkan Username")){
+            tNama.setText("Masukkan Username");
+        }
+    }//GEN-LAST:event_tNamaFocusLost
+
+    private void tEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tEmailFocusLost
+        // TODO add your handling code here:
+        String email = tEmail.getText();
+        if(email.equals("")||email.equals("Masukkan Email")){
+            tEmail.setText("Masukkan Email");
+        }
+    }//GEN-LAST:event_tEmailFocusLost
+
+    private void tPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tPasswordFocusLost
+        // TODO add your handling code here:
+        String password = tPassword.getText();
+        if(password.equals("")||password.equals("Masukkan Password")){
+            tPassword.setText("Masukkan Password");
+        }
+    }//GEN-LAST:event_tPasswordFocusLost
+
+    private void tVerifikasiFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tVerifikasiFocusLost
+        // TODO add your handling code here:
+        String verif = tVerifikasi.getText();
+        if(verif.equals("")||verif.equals("Verifikasi")){
+            tVerifikasi.setText("Verifikasi");
+        }
+    }//GEN-LAST:event_tVerifikasiFocusLost
 
     /**
      * @param args the command line arguments

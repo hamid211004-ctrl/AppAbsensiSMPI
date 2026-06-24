@@ -216,6 +216,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Tambah"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTambahActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="BtnUbah">
                   <Properties>
@@ -364,62 +367,26 @@
                       <Font name="Poppins" size="16" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="12">
+                      <Table columnCount="4" rowCount="3">
                         <Column editable="true" title="No" type="java.lang.String">
                           <Data value="1"/>
                           <Data value="2"/>
                           <Data value="3"/>
-                          <Data value="4"/>
-                          <Data value="5"/>
-                          <Data value="6"/>
-                          <Data value="7"/>
-                          <Data value="8"/>
-                          <Data value="9"/>
-                          <Data value="10"/>
-                          <Data value="11"/>
-                          <Data value="12"/>
                         </Column>
                         <Column editable="true" title="ID Kelas" type="java.lang.String">
                           <Data value="NK01"/>
                           <Data value="NK02"/>
                           <Data value="NK03"/>
-                          <Data value="NK04"/>
-                          <Data value="NK05"/>
-                          <Data value="NK06"/>
-                          <Data value="NK07"/>
-                          <Data value="NK08"/>
-                          <Data value="NK09"/>
-                          <Data value="NK10"/>
-                          <Data value="NK11"/>
-                          <Data value="NK12"/>
                         </Column>
                         <Column editable="true" title="Nama Kelas" type="java.lang.String">
                           <Data value="7A"/>
                           <Data value="7B"/>
                           <Data value="7C"/>
-                          <Data value="7D"/>
-                          <Data value="8A"/>
-                          <Data value="8B"/>
-                          <Data value="8C"/>
-                          <Data value="8D"/>
-                          <Data value="9A"/>
-                          <Data value="9B"/>
-                          <Data value="9C"/>
-                          <Data value="9D"/>
                         </Column>
                         <Column editable="true" title="Wali Kelas" type="java.lang.String">
-                          <Data value="Darto"/>
-                          <Data value="Aisyah"/>
-                          <Data value="Budiyanto"/>
-                          <Data value="Suryani"/>
-                          <Data value="Farida"/>
-                          <Data value="Nurul"/>
-                          <Data value="Hidayati"/>
-                          <Data value="Budiono"/>
-                          <Data value="Surip"/>
-                          <Data value="Binti"/>
-                          <Data value="Widatinisngsih"/>
-                          <Data value="Anisa"/>
+                          <Data value="Budi"/>
+                          <Data value="Siti"/>
+                          <Data value="Faiza"/>
                         </Column>
                       </Table>
                     </Property>

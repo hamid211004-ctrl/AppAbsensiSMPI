@@ -730,20 +730,13 @@
                       <Font name="Poppins" size="16" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="7" rowCount="12">
+                      <Table columnCount="7" rowCount="5">
                         <Column editable="true" title="No" type="java.lang.String">
                           <Data value="1"/>
                           <Data value="2"/>
                           <Data value="3"/>
                           <Data value="4"/>
                           <Data value="5"/>
-                          <Data value="6"/>
-                          <Data value="7"/>
-                          <Data value="8"/>
-                          <Data value="9"/>
-                          <Data value="10"/>
-                          <Data value="11"/>
-                          <Data value="12"/>
                         </Column>
                         <Column editable="true" title="ID Absensi" type="java.lang.String">
                           <Data value="AB001"/>
@@ -751,13 +744,6 @@
                           <Data value="AB003"/>
                           <Data value="AB004"/>
                           <Data value="AB005"/>
-                          <Data value="AB006"/>
-                          <Data value="AB007"/>
-                          <Data value="AB008"/>
-                          <Data value="AB009"/>
-                          <Data value="AB010"/>
-                          <Data value="AB011"/>
-                          <Data value="AB012"/>
                         </Column>
                         <Column editable="true" title="Tanggal" type="java.lang.String">
                           <Data value="01-01-2026"/>
@@ -765,13 +751,6 @@
                           <Data value="02-02-2026"/>
                           <Data value="02-02-2026"/>
                           <Data value="03-03-2026"/>
-                          <Data value="03-03-2026"/>
-                          <Data value="03-03-2026"/>
-                          <Data value="04-03-2026"/>
-                          <Data value="04-03-2026"/>
-                          <Data value="04-03-2026"/>
-                          <Data value="05-03-2026"/>
-                          <Data value="05-03-2026"/>
                         </Column>
                         <Column editable="true" title="Nama" type="java.lang.String">
                           <Data value="Ahmad"/>
@@ -779,13 +758,6 @@
                           <Data value="Caca"/>
                           <Data value="Faiza"/>
                           <Data value="Siti"/>
-                          <Data value="Zaidan"/>
-                          <Data value="Abidin"/>
-                          <Data value="Arifin"/>
-                          <Data value="Andika"/>
-                          <Data value="Burhan"/>
-                          <Data value="Fatimah"/>
-                          <Data value="Azizah"/>
                         </Column>
                         <Column editable="true" title="NISN" type="java.lang.String">
                           <Data value="0000000001"/>
@@ -793,13 +765,6 @@
                           <Data value="0000000003"/>
                           <Data value="0000000004"/>
                           <Data value="0000000005"/>
-                          <Data value="0000000006"/>
-                          <Data value="0000000007"/>
-                          <Data value="0000000008"/>
-                          <Data value="0000000009"/>
-                          <Data value="0000000010"/>
-                          <Data value="0000000011"/>
-                          <Data value="0000000012"/>
                         </Column>
                         <Column editable="true" title="Kelas" type="java.lang.String">
                           <Data value="7A"/>
@@ -807,25 +772,11 @@
                           <Data value="8B"/>
                           <Data value="8B"/>
                           <Data value="9C"/>
-                          <Data value="9C"/>
-                          <Data value="7B"/>
-                          <Data value="7B"/>
-                          <Data value="8A"/>
-                          <Data value="8A"/>
-                          <Data value="9D"/>
-                          <Data value="9D"/>
                         </Column>
                         <Column editable="true" title="Status" type="java.lang.String">
                           <Data value="Hadir"/>
                           <Data value="Hadir"/>
                           <Data value="Sakit"/>
-                          <Data value="Hadir"/>
-                          <Data value="Hadir"/>
-                          <Data value="Izin"/>
-                          <Data value="Alfa"/>
-                          <Data value="Sakit"/>
-                          <Data value="Hadir"/>
-                          <Data value="Hadir"/>
                           <Data value="Hadir"/>
                           <Data value="Hadir"/>
                         </Column>

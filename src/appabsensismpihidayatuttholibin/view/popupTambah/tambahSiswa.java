@@ -60,6 +60,7 @@ public class tambahSiswa extends javax.swing.JDialog {
         cbKelas = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel3.setBackground(new java.awt.Color(229, 234, 239));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -288,6 +289,14 @@ public class tambahSiswa extends javax.swing.JDialog {
         tNISN.setForeground(new java.awt.Color(114, 114, 114));
         tNISN.setText("NISN");
         tNISN.setPreferredSize(new java.awt.Dimension(71, 35));
+        tNISN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tNISNFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tNISNFocusLost(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -303,6 +312,14 @@ public class tambahSiswa extends javax.swing.JDialog {
         tNama.setForeground(new java.awt.Color(114, 114, 114));
         tNama.setText("Nama Siswa");
         tNama.setPreferredSize(new java.awt.Dimension(71, 35));
+        tNama.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tNamaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tNamaFocusLost(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -360,6 +377,14 @@ public class tambahSiswa extends javax.swing.JDialog {
         tTelepon.setForeground(new java.awt.Color(114, 114, 114));
         tTelepon.setText("No Telepon");
         tTelepon.setPreferredSize(new java.awt.Dimension(71, 35));
+        tTelepon.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tTeleponFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tTeleponFocusLost(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -421,8 +446,61 @@ public class tambahSiswa extends javax.swing.JDialog {
 
     private void lCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lCloseMouseClicked
         // TODO add your handling code here:
-        System.exit(0);
+        dispose();
     }//GEN-LAST:event_lCloseMouseClicked
+
+    
+    //Memberi fokus gained agar tulisan di text field kosong saat di klik
+    private void tNISNFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tNISNFocusGained
+        // TODO add your handling code here:
+        String nisn = tNISN.getText();
+        if(nisn.equals("NISN")){
+            tNISN.setText("");
+        }
+    }//GEN-LAST:event_tNISNFocusGained
+
+    private void tNamaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tNamaFocusGained
+        // TODO add your handling code here:
+        String nama = tNama.getText();
+        if(nama.equals("Nama Siswa")){
+            tNama.setText("");
+        }
+    }//GEN-LAST:event_tNamaFocusGained
+
+    private void tTeleponFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tTeleponFocusGained
+        // TODO add your handling code here:
+        String telepon = tTelepon.getText();
+        if(telepon.equals("No Telepon")){
+            tTelepon.setText("");
+        }
+    }//GEN-LAST:event_tTeleponFocusGained
+
+    
+    //Memberi fokus lost agar tulisan di text field kosong saat di klik
+    //dan kembali lagi jika tidak jadi dinputkan
+    private void tNISNFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tNISNFocusLost
+        // TODO add your handling code here:
+        String nisn = tNISN.getText();
+        if(nisn.equals("")||nisn.equals("NISN")){
+            tNISN.setText("NISN");
+        }
+    }//GEN-LAST:event_tNISNFocusLost
+
+    private void tNamaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tNamaFocusLost
+        // TODO add your handling code here:
+        String nama = tNama.getText();
+        if(nama.equals("")||nama.equals("Nama Siswa")){
+            tNama.setText("Nama Siswa");
+        }
+    }//GEN-LAST:event_tNamaFocusLost
+
+    private void tTeleponFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tTeleponFocusLost
+        // TODO add your handling code here:
+        String telepon = tTelepon.getText();
+        if(telepon.equals("")||telepon.equals("No Telepon")){
+            tTelepon.setText("No Telepon");
+        }
+    }//GEN-LAST:event_tTeleponFocusLost
 
     /**
      * @param args the command line arguments

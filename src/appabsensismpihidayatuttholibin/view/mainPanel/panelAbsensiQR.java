@@ -4,6 +4,15 @@
  */
 package appabsensismpihidayatuttholibin.view.mainPanel;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
+
 /**
  *
  * @author ASUS
@@ -15,7 +24,35 @@ public class panelAbsensiQR extends javax.swing.JPanel {
      */
     public panelAbsensiQR() {
         initComponents();
+        customTable();
     }
+    
+    //custom untuk header tabel
+    private void customTable() {
+    jTable1.setRowHeight(40);
+
+    JTableHeader header = jTable1.getTableHeader();
+    header.setPreferredSize(new Dimension(100, 40));
+
+    header.setDefaultRenderer(new DefaultTableCellRenderer() {
+        @Override
+        public Component getTableCellRendererComponent(
+                JTable table, Object value,
+                boolean isSelected, boolean hasFocus,
+                int row, int column) {
+
+            JLabel label = (JLabel) super.getTableCellRendererComponent(
+                    table, value, isSelected, hasFocus, row, column);
+
+            label.setBackground(new Color(42, 76, 102));
+            label.setForeground(Color.WHITE);
+            label.setFont(new Font("Segoe UI", Font.BOLD, 14));
+            label.setOpaque(true);
+
+            return label;
+        }
+    });
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -436,14 +473,7 @@ public class panelAbsensiQR extends javax.swing.JPanel {
                 {"2", "AB002", "01-01-2026", "Budi", "0000000002", "7A", "Hadir"},
                 {"3", "AB003", "02-02-2026", "Caca", "0000000003", "8B", "Sakit"},
                 {"4", "AB004", "02-02-2026", "Faiza", "0000000004", "8B", "Hadir"},
-                {"5", "AB005", "03-03-2026", "Siti", "0000000005", "9C", "Hadir"},
-                {"6", "AB006", "03-03-2026", "Zaidan", "0000000006", "9C", "Izin"},
-                {"7", "AB007", "03-03-2026", "Abidin", "0000000007", "7B", "Alfa"},
-                {"8", "AB008", "04-03-2026", "Arifin", "0000000008", "7B", "Sakit"},
-                {"9", "AB009", "04-03-2026", "Andika", "0000000009", "8A", "Hadir"},
-                {"10", "AB010", "04-03-2026", "Burhan", "0000000010", "8A", "Hadir"},
-                {"11", "AB011", "05-03-2026", "Fatimah", "0000000011", "9D", "Hadir"},
-                {"12", "AB012", "05-03-2026", "Azizah", "0000000012", "9D", "Hadir"}
+                {"5", "AB005", "03-03-2026", "Siti", "0000000005", "9C", "Hadir"}
             },
             new String [] {
                 "No", "ID Absensi", "Tanggal", "Nama", "NISN", "Kelas", "Status"

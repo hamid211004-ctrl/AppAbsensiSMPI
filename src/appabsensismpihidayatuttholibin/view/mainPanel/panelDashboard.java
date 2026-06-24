@@ -4,6 +4,18 @@
  */
 package appabsensismpihidayatuttholibin.view.mainPanel;
 
+import com.formdev.flatlaf.ui.FlatLineBorder;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Insets;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
+
 /**
  *
  * @author ASUS
@@ -15,7 +27,52 @@ public class panelDashboard extends javax.swing.JPanel {
      */
     public panelDashboard() {
         initComponents();
+        customTable();
+        borderLengkung(panelHadir, "#275167");
+        borderLengkung(panelIzin, "#FFF024");
+        borderLengkung(panelSakit, "#65D269");
+        borderLengkung(panelAlfa, "#FF0000");
+        borderLengkung(panelGuru, "#275167");
+        borderLengkung(panelKelas, "#275167");
+        borderLengkung(panelSiswa, "#275167");
     }
+    
+    //custom untuk header tabel
+    private void customTable() {
+    jTable1.setRowHeight(40);
+
+    JTableHeader header = jTable1.getTableHeader();
+    header.setPreferredSize(new Dimension(100, 40));
+
+    header.setDefaultRenderer(new DefaultTableCellRenderer() {
+        @Override
+        public Component getTableCellRendererComponent(
+                JTable table, Object value,
+                boolean isSelected, boolean hasFocus,
+                int row, int column) {
+
+            JLabel label = (JLabel) super.getTableCellRendererComponent(
+                    table, value, isSelected, hasFocus, row, column);
+
+            label.setBackground(new Color(42, 76, 102));
+            label.setForeground(Color.WHITE);
+            label.setFont(new Font("Segoe UI", Font.BOLD, 14));
+            label.setOpaque(true);
+
+            return label;
+        }
+    });
+}
+    
+    void borderLengkung(JPanel panel, String hexColor) {
+        panel.setBorder(new FlatLineBorder(
+                new Insets(0, 0, 0, 0),
+                Color.decode(hexColor),
+                1f,
+                15
+        ));
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,13 +113,13 @@ public class panelDashboard extends javax.swing.JPanel {
         jPanel25 = new javax.swing.JPanel();
         jPanel26 = new javax.swing.JPanel();
         jPanel27 = new javax.swing.JPanel();
-        panelHadir1 = new javax.swing.JPanel();
+        panelGuru = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        panelHadir2 = new javax.swing.JPanel();
+        panelKelas = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        panelHadir3 = new javax.swing.JPanel();
+        panelSiswa = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         panelAktivitasTerbaru = new javax.swing.JPanel();
@@ -93,7 +150,7 @@ public class panelDashboard extends javax.swing.JPanel {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
+            .addGap(0, 780, Short.MAX_VALUE)
         );
 
         add(jPanel1, java.awt.BorderLayout.LINE_START);
@@ -109,7 +166,7 @@ public class panelDashboard extends javax.swing.JPanel {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
+            .addGap(0, 780, Short.MAX_VALUE)
         );
 
         add(jPanel2, java.awt.BorderLayout.LINE_END);
@@ -227,7 +284,7 @@ public class panelDashboard extends javax.swing.JPanel {
         panelHadir.setBackground(new java.awt.Color(232, 242, 252));
         panelHadir.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 81, 103), 1, true));
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/Frame 19 (1).png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Poppins Medium", 0, 16)); // NOI18N
         jLabel3.setText("Hadir");
@@ -239,7 +296,7 @@ public class panelDashboard extends javax.swing.JPanel {
             .addGroup(panelHadirLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addContainerGap())
         );
@@ -250,7 +307,7 @@ public class panelDashboard extends javax.swing.JPanel {
                 .addGroup(panelHadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jPanel14.add(panelHadir);
@@ -258,7 +315,7 @@ public class panelDashboard extends javax.swing.JPanel {
         panelIzin.setBackground(new java.awt.Color(252, 255, 235));
         panelIzin.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 245, 59), 1, true));
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/Frame 21 (1).png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Poppins Medium", 0, 16)); // NOI18N
         jLabel5.setText("Izin");
@@ -270,7 +327,7 @@ public class panelDashboard extends javax.swing.JPanel {
             .addGroup(panelIzinLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addContainerGap())
         );
@@ -281,7 +338,7 @@ public class panelDashboard extends javax.swing.JPanel {
                 .addGroup(panelIzinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jPanel14.add(panelIzin);
@@ -289,7 +346,7 @@ public class panelDashboard extends javax.swing.JPanel {
         panelSakit.setBackground(new java.awt.Color(229, 254, 227));
         panelSakit.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(3, 154, 3), 1, true));
 
-        jLabel6.setText("jLabel6");
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/Frame 20 (1).png"))); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Poppins Medium", 0, 16)); // NOI18N
         jLabel7.setText("Sakit");
@@ -301,7 +358,7 @@ public class panelDashboard extends javax.swing.JPanel {
             .addGroup(panelSakitLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addContainerGap())
         );
@@ -312,7 +369,7 @@ public class panelDashboard extends javax.swing.JPanel {
                 .addGroup(panelSakitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jPanel14.add(panelSakit);
@@ -320,7 +377,7 @@ public class panelDashboard extends javax.swing.JPanel {
         panelAlfa.setBackground(new java.awt.Color(254, 235, 235));
         panelAlfa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(206, 0, 0), 1, true));
 
-        jLabel8.setText("jLabel8");
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/Frame 22 (1).png"))); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Poppins Medium", 0, 16)); // NOI18N
         jLabel9.setText("Alfa");
@@ -332,7 +389,7 @@ public class panelDashboard extends javax.swing.JPanel {
             .addGroup(panelAlfaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9)
                 .addContainerGap())
         );
@@ -343,7 +400,7 @@ public class panelDashboard extends javax.swing.JPanel {
                 .addGroup(panelAlfaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jLabel9))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jPanel14.add(panelAlfa);
@@ -423,96 +480,98 @@ public class panelDashboard extends javax.swing.JPanel {
         jPanel27.setBackground(new java.awt.Color(246, 250, 253));
         jPanel27.setLayout(new java.awt.GridLayout(1, 0, 20, 0));
 
-        panelHadir1.setBackground(new java.awt.Color(232, 242, 252));
-        panelHadir1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 81, 103), 1, true));
+        panelGuru.setBackground(new java.awt.Color(232, 242, 252));
+        panelGuru.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 81, 103), 1, true));
 
-        jLabel10.setText("jLabel10");
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/ph_chalkboard-teacher-duotone (6).png"))); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Poppins Medium", 0, 18)); // NOI18N
         jLabel11.setText("Guru");
 
-        javax.swing.GroupLayout panelHadir1Layout = new javax.swing.GroupLayout(panelHadir1);
-        panelHadir1.setLayout(panelHadir1Layout);
-        panelHadir1Layout.setHorizontalGroup(
-            panelHadir1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelHadir1Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelGuruLayout = new javax.swing.GroupLayout(panelGuru);
+        panelGuru.setLayout(panelGuruLayout);
+        panelGuruLayout.setHorizontalGroup(
+            panelGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGuruLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addContainerGap())
         );
-        panelHadir1Layout.setVerticalGroup(
-            panelHadir1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelHadir1Layout.createSequentialGroup()
+        panelGuruLayout.setVerticalGroup(
+            panelGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGuruLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelHadir1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
-        jPanel27.add(panelHadir1);
+        jPanel27.add(panelGuru);
 
-        panelHadir2.setBackground(new java.awt.Color(232, 242, 252));
-        panelHadir2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 81, 103), 1, true));
+        panelKelas.setBackground(new java.awt.Color(232, 242, 252));
+        panelKelas.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 81, 103), 1, true));
 
-        jLabel12.setText("jLabel12");
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/streamline-plump_class-lesson-remix (3).png"))); // NOI18N
 
         jLabel13.setFont(new java.awt.Font("Poppins Medium", 0, 18)); // NOI18N
         jLabel13.setText("Kelas");
 
-        javax.swing.GroupLayout panelHadir2Layout = new javax.swing.GroupLayout(panelHadir2);
-        panelHadir2.setLayout(panelHadir2Layout);
-        panelHadir2Layout.setHorizontalGroup(
-            panelHadir2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelHadir2Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelKelasLayout = new javax.swing.GroupLayout(panelKelas);
+        panelKelas.setLayout(panelKelasLayout);
+        panelKelasLayout.setHorizontalGroup(
+            panelKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelKelasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
-                .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addContainerGap())
         );
-        panelHadir2Layout.setVerticalGroup(
-            panelHadir2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelHadir2Layout.createSequentialGroup()
+        panelKelasLayout.setVerticalGroup(
+            panelKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelKelasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelHadir2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jLabel13))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
-        jPanel27.add(panelHadir2);
+        jPanel27.add(panelKelas);
 
-        panelHadir3.setBackground(new java.awt.Color(232, 242, 252));
-        panelHadir3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 81, 103), 1, true));
+        panelSiswa.setBackground(new java.awt.Color(232, 242, 252));
+        panelSiswa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 81, 103), 1, true));
 
-        jLabel14.setText("jLabel14");
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/ph_student-bold (3).png"))); // NOI18N
 
         jLabel15.setFont(new java.awt.Font("Poppins Medium", 0, 18)); // NOI18N
         jLabel15.setText("Siswa");
 
-        javax.swing.GroupLayout panelHadir3Layout = new javax.swing.GroupLayout(panelHadir3);
-        panelHadir3.setLayout(panelHadir3Layout);
-        panelHadir3Layout.setHorizontalGroup(
-            panelHadir3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelHadir3Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelSiswaLayout = new javax.swing.GroupLayout(panelSiswa);
+        panelSiswa.setLayout(panelSiswaLayout);
+        panelSiswaLayout.setHorizontalGroup(
+            panelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSiswaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(jLabel15)
                 .addContainerGap())
         );
-        panelHadir3Layout.setVerticalGroup(
-            panelHadir3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelHadir3Layout.createSequentialGroup()
+        panelSiswaLayout.setVerticalGroup(
+            panelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSiswaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelHadir3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(jLabel15))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
-        jPanel27.add(panelHadir3);
+        jPanel27.add(panelSiswa);
 
         panelPengguna.add(jPanel27, java.awt.BorderLayout.CENTER);
 
@@ -686,7 +745,7 @@ public class panelDashboard extends javax.swing.JPanel {
 
         panelGrafik.setBackground(new java.awt.Color(246, 250, 253));
         panelGrafik.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 81, 103), 1, true));
-        panelGrafik.setLayout(new java.awt.GridLayout(1, 0));
+        panelGrafik.setLayout(new java.awt.BorderLayout());
         jPanel8.add(panelGrafik, java.awt.BorderLayout.CENTER);
 
         jPanel3.add(jPanel8, java.awt.BorderLayout.CENTER);
@@ -740,13 +799,14 @@ public class panelDashboard extends javax.swing.JPanel {
     private javax.swing.JPanel panelAktivitasTerbaru;
     private javax.swing.JPanel panelAlfa;
     private javax.swing.JPanel panelGrafik;
+    private javax.swing.JPanel panelGuru;
     private javax.swing.JPanel panelHadir;
-    private javax.swing.JPanel panelHadir1;
-    private javax.swing.JPanel panelHadir2;
-    private javax.swing.JPanel panelHadir3;
     private javax.swing.JPanel panelIzin;
     private javax.swing.JPanel panelKehadiran;
+    private javax.swing.JPanel panelKelas;
     private javax.swing.JPanel panelPengguna;
     private javax.swing.JPanel panelSakit;
+    private javax.swing.JPanel panelSiswa;
     // End of variables declaration//GEN-END:variables
+
 }

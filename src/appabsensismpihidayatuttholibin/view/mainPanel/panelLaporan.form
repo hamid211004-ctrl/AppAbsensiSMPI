@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JPopupMenu" name="jPopupMenu1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+    </Container>
+  </NonVisualComponents>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -262,6 +270,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Tanggal"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTanggalActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="BtnBulan">
                   <Properties>
@@ -405,87 +416,48 @@
                           <Data value="5"/>
                         </Column>
                         <Column editable="true" title="ID Absensi" type="java.lang.String">
-                          <Data value="0000000001"/>
-                          <Data value="0000000002"/>
-                          <Data value="0000000003"/>
-                          <Data value="0000000004"/>
-                          <Data value="0000000005"/>
+                          <Data value="AB001"/>
+                          <Data value="AB002"/>
+                          <Data value="AB003"/>
+                          <Data value="AB004"/>
+                          <Data value="AB005"/>
                         </Column>
                         <Column editable="true" title="Tanggal" type="java.lang.String">
+                          <Data value="01-01-2026"/>
+                          <Data value="01-01-2026"/>
+                          <Data value="02-02-2026"/>
+                          <Data value="02-02-2026"/>
+                          <Data value="03-03-2026"/>
+                        </Column>
+                        <Column editable="true" title="Nama" type="java.lang.String">
                           <Data value="Ahmad"/>
                           <Data value="Budi"/>
                           <Data value="Caca"/>
                           <Data value="Faiza"/>
                           <Data value="Siti"/>
                         </Column>
-                        <Column editable="true" title="Nama" type="java.lang.String">
-                          <Data value="Laki-Laki"/>
-                          <Data value="Laki-Laki"/>
-                          <Data value="Perempuan"/>
-                          <Data value="Perempuan"/>
-                          <Data value="Perempuan"/>
-                        </Column>
-                        <Column editable="true" title="Jenis Kelamin" type="java.lang.String">
+                        <Column editable="true" title="NISN" type="java.lang.String">
                           <Data value="0000000001"/>
-                          <Data value="01-01-2001"/>
-                          <Data value="01-02-2001"/>
-                          <Data value="02-02-2001"/>
-                          <Data value="03-02-2001"/>
+                          <Data value="0000000002"/>
+                          <Data value="0000000003"/>
+                          <Data value="0000000004"/>
+                          <Data value="0000000005"/>
                         </Column>
                         <Column editable="true" title="Kelas" type="java.lang.String">
                           <Data value="7A"/>
-                          <Data value="Ngawi"/>
-                          <Data value="Nganjuk"/>
-                          <Data value="Loceret"/>
-                          <Data value="Berbek"/>
+                          <Data value="7A"/>
+                          <Data value="8B"/>
+                          <Data value="8B"/>
+                          <Data value="9C"/>
                         </Column>
                         <Column editable="true" title="Status" type="java.lang.String">
-                          <Data value="null"/>
-                          <Data value="085111111111"/>
-                          <Data value="085222222222"/>
-                          <Data value="085333333333"/>
-                          <Data value="085444444444"/>
+                          <Data value="Hadir"/>
+                          <Data value="Hadir"/>
+                          <Data value="Sakit"/>
+                          <Data value="Hadir"/>
+                          <Data value="Hadir"/>
                         </Column>
                       </Table>
-                    </Property>
-                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                      <TableColumnModel selectionModel="0">
-                        <Column maxWidth="-1" minWidth="0" prefWidth="2" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                      </TableColumnModel>
                     </Property>
                     <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="67" green="51" red="27" type="rgb"/>

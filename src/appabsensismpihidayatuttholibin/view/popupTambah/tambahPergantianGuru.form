@@ -3,6 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="undecorated" type="boolean" value="true"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -468,7 +469,7 @@
                           <Component id="tMapel" alignment="0" max="32767" attributes="0"/>
                           <Component id="cbNamaGuru" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTGL" alignment="0" pref="263" max="32767" attributes="0"/>
-                          <Component id="tNIP" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tID" alignment="0" max="32767" attributes="0"/>
                           <Component id="tTugas" alignment="0" max="32767" attributes="0"/>
                           <Component id="cbGuruPengganti" max="32767" attributes="0"/>
                           <Component id="tKeterangan" alignment="0" max="32767" attributes="0"/>
@@ -478,7 +479,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
-                              <Component id="tNIP" min="-2" max="-2" attributes="0"/>
+                              <Component id="tID" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Component id="jTGL" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -499,7 +500,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JTextField" name="tNIP">
+                    <Component class="javax.swing.JTextField" name="tID">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Poppins" size="16" style="0"/>
@@ -512,6 +513,10 @@
                           <Dimension value="[71, 35]"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tIDFocusGained"/>
+                        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tIDFocusLost"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="cbNamaGuru">
                       <Properties>
@@ -560,6 +565,10 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Mapel"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tMapelFocusGained"/>
+                        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tMapelFocusLost"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="tJamke">
                       <Properties>
@@ -569,11 +578,15 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="72" green="72" red="72" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="No Telepon"/>
+                        <Property name="text" type="java.lang.String" value="Jam ke"/>
                         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                           <Dimension value="[71, 35]"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tJamkeFocusGained"/>
+                        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tJamkeFocusLost"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="tTugas">
                     </Component>

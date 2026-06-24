@@ -19,6 +19,13 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    // membuat method bersih untuk tcari yang apabila diklik tulisan akan hilang
+    void bersih(){
+        tID.setText("ID Pengguna");
+        tMapel.setText("Mapel");
+        tJamke.setText("Jam ke");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,7 +58,7 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        tNIP = new javax.swing.JTextField();
+        tID = new javax.swing.JTextField();
         cbNamaGuru = new javax.swing.JComboBox<>();
         jTGL = new com.toedter.calendar.JDateChooser();
         tMapel = new javax.swing.JTextField();
@@ -61,6 +68,7 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
         tKeterangan = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel3.setBackground(new java.awt.Color(229, 234, 239));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -264,10 +272,18 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
 
         jPanel7.setBackground(new java.awt.Color(229, 234, 239));
 
-        tNIP.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
-        tNIP.setForeground(new java.awt.Color(114, 114, 114));
-        tNIP.setText("ID Pergantian");
-        tNIP.setPreferredSize(new java.awt.Dimension(71, 35));
+        tID.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
+        tID.setForeground(new java.awt.Color(114, 114, 114));
+        tID.setText("ID Pergantian");
+        tID.setPreferredSize(new java.awt.Dimension(71, 35));
+        tID.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tIDFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tIDFocusLost(evt);
+            }
+        });
 
         cbNamaGuru.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         cbNamaGuru.setForeground(new java.awt.Color(114, 114, 114));
@@ -281,11 +297,27 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
         tMapel.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         tMapel.setForeground(new java.awt.Color(114, 114, 114));
         tMapel.setText("Mapel");
+        tMapel.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tMapelFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tMapelFocusLost(evt);
+            }
+        });
 
         tJamke.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         tJamke.setForeground(new java.awt.Color(114, 114, 114));
-        tJamke.setText("No Telepon");
+        tJamke.setText("Jam ke");
         tJamke.setPreferredSize(new java.awt.Dimension(71, 35));
+        tJamke.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tJamkeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tJamkeFocusLost(evt);
+            }
+        });
 
         cbGuruPengganti.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         cbGuruPengganti.setForeground(new java.awt.Color(114, 114, 114));
@@ -303,7 +335,7 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
             .addComponent(tMapel)
             .addComponent(cbNamaGuru, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jTGL, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
-            .addComponent(tNIP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(tID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tTugas)
             .addComponent(cbGuruPengganti, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tKeterangan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -312,7 +344,7 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(tNIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTGL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -367,8 +399,61 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
 
     private void lCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lCloseMouseClicked
         // TODO add your handling code here:
-        System.exit(0);
+        dispose();
     }//GEN-LAST:event_lCloseMouseClicked
+
+    
+    //Memberi fokus gained agar tulisan di text field kosong saat di klik
+    private void tIDFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tIDFocusGained
+        // TODO add your handling code here:
+        String ID = tID.getText();
+        if(ID.equals("ID Pergantian")){
+            tID.setText("");
+        }
+    }//GEN-LAST:event_tIDFocusGained
+
+    private void tMapelFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tMapelFocusGained
+        // TODO add your handling code here:
+        String mapel = tMapel.getText();
+        if(mapel.equals("Mapel")){
+            tMapel.setText("");
+        }
+    }//GEN-LAST:event_tMapelFocusGained
+
+    private void tJamkeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tJamkeFocusGained
+        // TODO add your handling code here:
+        String jam = tJamke.getText();
+        if(jam.equals("Jam ke")){
+            tJamke.setText("");
+        }
+    }//GEN-LAST:event_tJamkeFocusGained
+
+    
+    //Memberi fokus lost agar tulisan di text field kosong saat di klik
+    //dan kembali lagi jika tidak jadi dinputkan
+    private void tIDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tIDFocusLost
+        // TODO add your handling code here:
+        String ID = tID.getText();
+        if(ID.equals("")||ID.equals("ID Pergantian")){
+            tID.setText("ID Pergantian");
+        }
+    }//GEN-LAST:event_tIDFocusLost
+
+    private void tMapelFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tMapelFocusLost
+        // TODO add your handling code here:
+        String mapel = tMapel.getText();
+        if(mapel.equals("")||mapel.equals("Mapel")){
+            tMapel.setText("NMapel");
+        }
+    }//GEN-LAST:event_tMapelFocusLost
+
+    private void tJamkeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tJamkeFocusLost
+        // TODO add your handling code here:
+        String jam = tJamke.getText();
+        if(jam.equals("")||jam.equals("Jam ke")){
+            tJamke.setText("Jam ke");
+        }
+    }//GEN-LAST:event_tJamkeFocusLost
 
     /**
      * @param args the command line arguments
@@ -433,10 +518,10 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel8;
     private com.toedter.calendar.JDateChooser jTGL;
     private javax.swing.JLabel lClose;
+    private javax.swing.JTextField tID;
     private javax.swing.JTextField tJamke;
     private javax.swing.JTextField tKeterangan;
     private javax.swing.JTextField tMapel;
-    private javax.swing.JTextField tNIP;
     private javax.swing.JTextField tTugas;
     // End of variables declaration//GEN-END:variables
 }

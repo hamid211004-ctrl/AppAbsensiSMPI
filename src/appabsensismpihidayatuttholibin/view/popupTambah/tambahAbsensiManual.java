@@ -19,6 +19,11 @@ public class tambahAbsensiManual extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    // membuat method bersih untuk tcari yang apabila diklik tulisan cari akan hilang
+    void bersih(){
+        tID.setText("ID Absensi");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,7 +55,7 @@ public class tambahAbsensiManual extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        tNISN = new javax.swing.JTextField();
+        tID = new javax.swing.JTextField();
         cbJK = new javax.swing.JComboBox<>();
         cbKelas = new javax.swing.JComboBox<>();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
@@ -58,6 +63,7 @@ public class tambahAbsensiManual extends javax.swing.JDialog {
         jComboBox2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel3.setBackground(new java.awt.Color(229, 234, 239));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -267,10 +273,18 @@ public class tambahAbsensiManual extends javax.swing.JDialog {
         jPanel7.setBackground(new java.awt.Color(229, 234, 239));
         jPanel7.setLayout(new java.awt.GridBagLayout());
 
-        tNISN.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
-        tNISN.setForeground(new java.awt.Color(114, 114, 114));
-        tNISN.setText("ID Absensi");
-        tNISN.setPreferredSize(new java.awt.Dimension(71, 35));
+        tID.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
+        tID.setForeground(new java.awt.Color(114, 114, 114));
+        tID.setText("ID Absensi");
+        tID.setPreferredSize(new java.awt.Dimension(71, 35));
+        tID.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tIDFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tIDFocusLost(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -280,7 +294,7 @@ public class tambahAbsensiManual extends javax.swing.JDialog {
         gridBagConstraints.weightx = 0.65;
         gridBagConstraints.weighty = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(22, 0, 0, 0);
-        jPanel7.add(tNISN, gridBagConstraints);
+        jPanel7.add(tID, gridBagConstraints);
 
         cbJK.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         cbJK.setForeground(new java.awt.Color(114, 114, 114));
@@ -389,8 +403,29 @@ public class tambahAbsensiManual extends javax.swing.JDialog {
 
     private void lCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lCloseMouseClicked
         // TODO add your handling code here:
-        System.exit(0);
+        dispose();
     }//GEN-LAST:event_lCloseMouseClicked
+
+    
+    //Memberi fokus gained agar tulisan di text field kosong saat di klik
+    private void tIDFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tIDFocusGained
+        // TODO add your handling code here:
+        String ID = tID.getText();
+        if(ID.equals("ID Absensi")){
+            tID.setText("");
+        }
+    }//GEN-LAST:event_tIDFocusGained
+
+    
+    //Memberi fokus lost agar tulisan di text field kosong saat di klik
+    //dan kembali lagi jika tidak jadi dinputkan
+    private void tIDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tIDFocusLost
+        // TODO add your handling code here:
+        String ID = tID.getText();
+        if(ID.equals("")||ID.equals("ID Absensi")){
+            tID.setText("ID Absensi");
+        }
+    }//GEN-LAST:event_tIDFocusLost
 
     /**
      * @param args the command line arguments
@@ -455,6 +490,6 @@ public class tambahAbsensiManual extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JLabel lClose;
-    private javax.swing.JTextField tNISN;
+    private javax.swing.JTextField tID;
     // End of variables declaration//GEN-END:variables
 }

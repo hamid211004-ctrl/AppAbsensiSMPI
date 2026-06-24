@@ -4,6 +4,15 @@
  */
 package appabsensismpihidayatuttholibin.view.mainPanel;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
+
 /**
  *
  * @author ASUS
@@ -15,7 +24,35 @@ public class panelGenerateQR extends javax.swing.JPanel {
      */
     public panelGenerateQR() {
         initComponents();
+        customTable();
     }
+    
+    //custom untuk header tabel
+    private void customTable() {
+    jTable1.setRowHeight(40);
+
+    JTableHeader header = jTable1.getTableHeader();
+    header.setPreferredSize(new Dimension(100, 40));
+
+    header.setDefaultRenderer(new DefaultTableCellRenderer() {
+        @Override
+        public Component getTableCellRendererComponent(
+                JTable table, Object value,
+                boolean isSelected, boolean hasFocus,
+                int row, int column) {
+
+            JLabel label = (JLabel) super.getTableCellRendererComponent(
+                    table, value, isSelected, hasFocus, row, column);
+
+            label.setBackground(new Color(42, 76, 102));
+            label.setForeground(Color.WHITE);
+            label.setFont(new Font("Segoe UI", Font.BOLD, 14));
+            label.setOpaque(true);
+
+            return label;
+        }
+    });
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -138,6 +175,7 @@ public class panelGenerateQR extends javax.swing.JPanel {
         jButton2.setText("Semua Siswa");
         jPanel10.add(jButton2);
 
+        jComboBox1.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.setPreferredSize(new java.awt.Dimension(72, 60));
 

@@ -19,6 +19,7 @@ import appabsensismpihidayatuttholibin.view.mainPanel.panelAbsensiManual;
 import appabsensismpihidayatuttholibin.view.mainPanel.panelLaporan;
 import appabsensismpihidayatuttholibin.view.mainPanel.panelAbout;
 import java.awt.CardLayout;
+import java.awt.Color;
 
 /**
  *
@@ -89,19 +90,20 @@ public class mainForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         panelSidebar = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        bDashboard = new javax.swing.JButton();
-        bGuru = new javax.swing.JButton();
-        bKelas = new javax.swing.JButton();
-        bSiswa = new javax.swing.JButton();
-        bGenerate = new javax.swing.JButton();
-        bPengguna = new javax.swing.JButton();
-        bPG = new javax.swing.JButton();
-        bQR = new javax.swing.JButton();
-        bManual = new javax.swing.JButton();
-        bLaporan = new javax.swing.JButton();
-        bAbout = new javax.swing.JButton();
+        bDashboard = new javax.swing.JToggleButton();
+        bGuru = new javax.swing.JToggleButton();
+        bKelas = new javax.swing.JToggleButton();
+        bSiswa = new javax.swing.JToggleButton();
+        bGenerate = new javax.swing.JToggleButton();
+        bPengguna = new javax.swing.JToggleButton();
+        bPergantian = new javax.swing.JToggleButton();
+        bQR = new javax.swing.JToggleButton();
+        bManual = new javax.swing.JToggleButton();
+        bLaporan = new javax.swing.JToggleButton();
+        bAbout = new javax.swing.JToggleButton();
         bKeluar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -125,113 +127,135 @@ public class mainForm extends javax.swing.JFrame {
         jPanel3.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
 
         bDashboard.setBackground(new java.awt.Color(39, 81, 103));
+        buttonGroup1.add(bDashboard);
         bDashboard.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         bDashboard.setForeground(new java.awt.Color(255, 255, 255));
-        bDashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/ph_chalkboard-teacher-duotone (5).png"))); // NOI18N
+        bDashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/boxicons_qr-filled (2).png"))); // NOI18N
+        bDashboard.setSelected(true);
         bDashboard.setText("Dashboard");
-        bDashboard.setBorderPainted(false);
-        bDashboard.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        bDashboard.setIconTextGap(7);
+        bDashboard.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
+        bDashboard.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bDashboard.setIconTextGap(10);
         bDashboard.addActionListener(this::bDashboardActionPerformed);
         jPanel3.add(bDashboard);
 
         bGuru.setBackground(new java.awt.Color(39, 81, 103));
+        buttonGroup1.add(bGuru);
         bGuru.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         bGuru.setForeground(new java.awt.Color(255, 255, 255));
-        bGuru.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/streamline-plump_class-lesson-remix (2).png"))); // NOI18N
+        bGuru.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/ph_chalkboard-teacher-duotone (5).png"))); // NOI18N
         bGuru.setText("Guru");
-        bGuru.setBorderPainted(false);
-        bGuru.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        bGuru.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
+        bGuru.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bGuru.setIconTextGap(10);
         bGuru.addActionListener(this::bGuruActionPerformed);
         jPanel3.add(bGuru);
 
         bKelas.setBackground(new java.awt.Color(39, 81, 103));
+        buttonGroup1.add(bKelas);
         bKelas.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         bKelas.setForeground(new java.awt.Color(255, 255, 255));
         bKelas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/streamline-plump_class-lesson-remix (2).png"))); // NOI18N
         bKelas.setText("Kelas");
-        bKelas.setBorderPainted(false);
-        bKelas.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        bKelas.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
+        bKelas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bKelas.setIconTextGap(10);
         bKelas.addActionListener(this::bKelasActionPerformed);
         jPanel3.add(bKelas);
 
         bSiswa.setBackground(new java.awt.Color(39, 81, 103));
+        buttonGroup1.add(bSiswa);
         bSiswa.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         bSiswa.setForeground(new java.awt.Color(255, 255, 255));
         bSiswa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/ph_student-bold (2).png"))); // NOI18N
         bSiswa.setText("Siswa");
-        bSiswa.setBorderPainted(false);
-        bSiswa.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        bSiswa.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
+        bSiswa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bSiswa.setIconTextGap(10);
         bSiswa.addActionListener(this::bSiswaActionPerformed);
         jPanel3.add(bSiswa);
 
         bGenerate.setBackground(new java.awt.Color(39, 81, 103));
+        buttonGroup1.add(bGenerate);
         bGenerate.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         bGenerate.setForeground(new java.awt.Color(255, 255, 255));
         bGenerate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/boxicons_qr-filled (2).png"))); // NOI18N
         bGenerate.setText("Generate QR");
-        bGenerate.setBorderPainted(false);
-        bGenerate.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        bGenerate.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
+        bGenerate.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bGenerate.setIconTextGap(10);
         bGenerate.addActionListener(this::bGenerateActionPerformed);
         jPanel3.add(bGenerate);
 
         bPengguna.setBackground(new java.awt.Color(39, 81, 103));
+        buttonGroup1.add(bPengguna);
         bPengguna.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         bPengguna.setForeground(new java.awt.Color(255, 255, 255));
         bPengguna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/lsicon_report-outline (2).png"))); // NOI18N
         bPengguna.setText("Pengguna");
-        bPengguna.setBorderPainted(false);
-        bPengguna.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        bPengguna.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
+        bPengguna.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bPengguna.setIconTextGap(10);
         bPengguna.addActionListener(this::bPenggunaActionPerformed);
         jPanel3.add(bPengguna);
 
-        bPG.setBackground(new java.awt.Color(39, 81, 103));
-        bPG.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
-        bPG.setForeground(new java.awt.Color(255, 255, 255));
-        bPG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/ic_twotone-co-present (2).png"))); // NOI18N
-        bPG.setText("Pergantian Guru");
-        bPG.setBorderPainted(false);
-        bPG.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        bPG.addActionListener(this::bPGActionPerformed);
-        jPanel3.add(bPG);
+        bPergantian.setBackground(new java.awt.Color(39, 81, 103));
+        buttonGroup1.add(bPergantian);
+        bPergantian.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
+        bPergantian.setForeground(new java.awt.Color(255, 255, 255));
+        bPergantian.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/ic_twotone-co-present (2).png"))); // NOI18N
+        bPergantian.setText("Pergantian Guru");
+        bPergantian.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
+        bPergantian.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bPergantian.setIconTextGap(10);
+        bPergantian.addActionListener(this::bPergantianActionPerformed);
+        jPanel3.add(bPergantian);
 
         bQR.setBackground(new java.awt.Color(39, 81, 103));
+        buttonGroup1.add(bQR);
         bQR.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         bQR.setForeground(new java.awt.Color(255, 255, 255));
         bQR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/boxicons_qr-scan (2).png"))); // NOI18N
         bQR.setText("Absensi QR");
-        bQR.setBorderPainted(false);
-        bQR.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        bQR.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
+        bQR.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bQR.setIconTextGap(10);
         bQR.addActionListener(this::bQRActionPerformed);
         jPanel3.add(bQR);
 
         bManual.setBackground(new java.awt.Color(39, 81, 103));
+        buttonGroup1.add(bManual);
         bManual.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         bManual.setForeground(new java.awt.Color(255, 255, 255));
         bManual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/ic_twotone-class (2).png"))); // NOI18N
-        bManual.setText("Abensi Manual");
-        bManual.setBorderPainted(false);
-        bManual.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        bManual.setText("Absensi Manual");
+        bManual.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
+        bManual.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bManual.setIconTextGap(10);
         bManual.addActionListener(this::bManualActionPerformed);
         jPanel3.add(bManual);
 
         bLaporan.setBackground(new java.awt.Color(39, 81, 103));
+        buttonGroup1.add(bLaporan);
         bLaporan.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         bLaporan.setForeground(new java.awt.Color(255, 255, 255));
         bLaporan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/lsicon_management-outline (2).png"))); // NOI18N
         bLaporan.setText("Laporan");
-        bLaporan.setBorderPainted(false);
-        bLaporan.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        bLaporan.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
+        bLaporan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bLaporan.setIconTextGap(10);
         bLaporan.addActionListener(this::bLaporanActionPerformed);
         jPanel3.add(bLaporan);
 
         bAbout.setBackground(new java.awt.Color(39, 81, 103));
+        buttonGroup1.add(bAbout);
         bAbout.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         bAbout.setForeground(new java.awt.Color(255, 255, 255));
         bAbout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/ix_about (2).png"))); // NOI18N
         bAbout.setText("About");
-        bAbout.setBorderPainted(false);
-        bAbout.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        bAbout.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
+        bAbout.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bAbout.setIconTextGap(10);
         bAbout.addActionListener(this::bAboutActionPerformed);
         jPanel3.add(bAbout);
 
@@ -242,6 +266,7 @@ public class mainForm extends javax.swing.JFrame {
         bKeluar.setText("Keluar");
         bKeluar.setBorderPainted(false);
         bKeluar.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        bKeluar.setIconTextGap(10);
         bKeluar.addActionListener(this::bKeluarActionPerformed);
 
         jLabel2.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
@@ -383,7 +408,33 @@ public class mainForm extends javax.swing.JFrame {
         getContentPane().add(panelTengah, java.awt.BorderLayout.CENTER);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_bKeluarActionPerformed
+
+    
+    //Memberi fokus gained agar tulisan di text field kosong saat di klik
+    private void tCariFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tCariFocusGained
+        // TODO add your handling code here:
+        String Cari = tCari.getText();
+        if(Cari.equals("Cari")){
+            tCari.setText("");
+        }
+    }//GEN-LAST:event_tCariFocusGained
+
+    //Memberi fokus lost agar tulisan di text field kosong saat di klik
+    //dan kembali lagi jika tidak jadi dinputkan
+    private void tCariFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tCariFocusLost
+        // TODO add your handling code here:
+        String Cari = tCari.getText();
+        if(Cari.equals("")||Cari.equals("Cari")){
+            tCari.setText("Cari");
+        }
+    }//GEN-LAST:event_tCariFocusLost
 
     private void bDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDashboardActionPerformed
         // TODO add your handling code here:
@@ -415,10 +466,10 @@ public class mainForm extends javax.swing.JFrame {
         cardLayout.show(panelPerpindahan, "pengguna");
     }//GEN-LAST:event_bPenggunaActionPerformed
 
-    private void bPGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPGActionPerformed
+    private void bPergantianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPergantianActionPerformed
         // TODO add your handling code here:
         cardLayout.show(panelPerpindahan, "PG");
-    }//GEN-LAST:event_bPGActionPerformed
+    }//GEN-LAST:event_bPergantianActionPerformed
 
     private void bQRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bQRActionPerformed
         // TODO add your handling code here:
@@ -440,29 +491,6 @@ public class mainForm extends javax.swing.JFrame {
         cardLayout.show(panelPerpindahan, "about");
     }//GEN-LAST:event_bAboutActionPerformed
 
-    private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_bKeluarActionPerformed
-
-    
-    
-    private void tCariFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tCariFocusGained
-        // TODO add your handling code here:
-        String Cari = tCari.getText();
-        if(Cari.equals("Cari")){
-            tCari.setText("");
-        }
-    }//GEN-LAST:event_tCariFocusGained
-
-    private void tCariFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tCariFocusLost
-        // TODO add your handling code here:
-        String Cari = tCari.getText();
-        if(Cari.equals("")||Cari.equals("Cari")){
-            tCari.setText("Cari");
-        }
-    }//GEN-LAST:event_tCariFocusLost
-
     /**
      * @param args the command line arguments
      */
@@ -473,6 +501,9 @@ public class mainForm extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
+            UIManager.put("ToggleButton.selectedBackground", new Color(0,128,195));
+            UIManager.put("Button.arc", 20);
+            UIManager.put("ToggleButton.arc", 20);
             UIManager.put("Button.arc", 20);
             UIManager.put("Button.borderwidht", 0);
             UIManager.put("TextComponent.arc", 20);
@@ -491,18 +522,19 @@ public class mainForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Header;
     private javax.swing.JLabel LMenu;
-    private javax.swing.JButton bAbout;
-    private javax.swing.JButton bDashboard;
-    private javax.swing.JButton bGenerate;
-    private javax.swing.JButton bGuru;
-    private javax.swing.JButton bKelas;
+    private javax.swing.JToggleButton bAbout;
+    private javax.swing.JToggleButton bDashboard;
+    private javax.swing.JToggleButton bGenerate;
+    private javax.swing.JToggleButton bGuru;
+    private javax.swing.JToggleButton bKelas;
     private javax.swing.JButton bKeluar;
-    private javax.swing.JButton bLaporan;
-    private javax.swing.JButton bManual;
-    private javax.swing.JButton bPG;
-    private javax.swing.JButton bPengguna;
-    private javax.swing.JButton bQR;
-    private javax.swing.JButton bSiswa;
+    private javax.swing.JToggleButton bLaporan;
+    private javax.swing.JToggleButton bManual;
+    private javax.swing.JToggleButton bPengguna;
+    private javax.swing.JToggleButton bPergantian;
+    private javax.swing.JToggleButton bQR;
+    private javax.swing.JToggleButton bSiswa;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -4,6 +4,16 @@
  */
 package appabsensismpihidayatuttholibin.view.mainPanel;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
+import appabsensismpihidayatuttholibin.view.popupTambah.tambahSiswa;
+
 /**
  *
  * @author ASUS
@@ -15,6 +25,44 @@ public class panelSiswa extends javax.swing.JPanel {
      */
     public panelSiswa() {
         initComponents();
+        customTable();
+    }
+    
+    //custom untuk header tabel
+    private void customTable() {
+    jTable1.setRowHeight(40);
+
+    JTableHeader header = jTable1.getTableHeader();
+    header.setPreferredSize(new Dimension(100, 40));
+
+    header.setDefaultRenderer(new DefaultTableCellRenderer() {
+        @Override
+        public Component getTableCellRendererComponent(
+                JTable table, Object value,
+                boolean isSelected, boolean hasFocus,
+                int row, int column) {
+
+            JLabel label = (JLabel) super.getTableCellRendererComponent(
+                    table, value, isSelected, hasFocus, row, column);
+
+            label.setBackground(new Color(42, 76, 102));
+            label.setForeground(Color.WHITE);
+            label.setFont(new Font("Segoe UI", Font.BOLD, 14));
+            label.setOpaque(true);
+
+            return label;
+        }
+    });
+}
+    
+    //membuat method untuk memanggil pop up JDialog
+    private void popupTambah(java.awt.event.ActionEvent evt){
+        
+        tambahSiswa dialog = new tambahSiswa(
+        (java.awt.Frame) javax.swing.SwingUtilities.getWindowAncestor(this),true
+        );
+        dialog.setLocationRelativeTo(null);
+        dialog.setVisible(true);
     }
 
     /**
@@ -126,6 +174,7 @@ public class panelSiswa extends javax.swing.JPanel {
         BtnTambah.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
         BtnTambah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/icons8_plus.png"))); // NOI18N
         BtnTambah.setText("Tambah");
+        BtnTambah.addActionListener(this::BtnTambahActionPerformed);
         jPanel6.add(BtnTambah);
 
         BtnUbah.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
@@ -219,18 +268,10 @@ public class panelSiswa extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "0000000001", "Ahmad", "Laki-Laki", "0000000001", "7A", null, "7A"},
                 {"2", "0000000002", "Budi", "Laki-Laki", "01-01-2001", "Ngawi", "085111111111", "7A"},
                 {"3", "0000000003", "Caca", "Perempuan", "01-02-2001", "Nganjuk", "085222222222", "8B"},
                 {"4", "0000000004", "Faiza", "Perempuan", "02-02-2001", "Loceret", "085333333333", "8B"},
-                {"5", "0000000005", "Siti", "Perempuan", "03-02-2001", "Berbek", "085444444444", "9C"},
-                {"6", "0000000006", "Zaidan", "Laki-Laki", "01-03-2001", "Kuncir", "085555555555555", "9C"},
-                {"7", "0000000007", "Abidin", "Laki-Laki", "03-01-2001", "Ngetos", "085666666666", "7B"},
-                {"8", "0000000008", "Arifin", "Laki-Laki", "04-01-2001", "Nganjuk", "085777777777", "7B"},
-                {"9", "0000000009", "Andika", "Laki-Laki", "09-05-2001", "Madiun", "085888888888", "8A"},
-                {"10", "0000000010", "Burhan", "Laki-Laki", "10-11-2001", "Kertosono", "085999999999", "8A"},
-                {"11", "0000000011", "Fatimah", "Perempuan", "01-01-2002", "Sawahan", "085101010101", "9D"},
-                {"12", "0000000012", "Azizah", "Perempuan", "12-12-2001", "Ponorogo", "085121212121", "9D"}
+                {"5", "0000000005", "Siti", "Perempuan", "03-02-2001", "Berbek", "085444444444", "9C"}
             },
             new String [] {
                 "No", "NISN", "Nama", "Jenis Kelamin", "Tanggal Lahir", "Alamat", "No Telepon", "Kelas"
@@ -262,6 +303,11 @@ public class panelSiswa extends javax.swing.JPanel {
 
         add(jPanel5, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahActionPerformed
+        // TODO add your handling code here:
+        popupTambah(evt);
+    }//GEN-LAST:event_BtnTambahActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

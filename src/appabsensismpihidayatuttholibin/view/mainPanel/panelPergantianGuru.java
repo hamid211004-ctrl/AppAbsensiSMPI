@@ -4,6 +4,16 @@
  */
 package appabsensismpihidayatuttholibin.view.mainPanel;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
+import appabsensismpihidayatuttholibin.view.popupTambah.tambahPergantianGuru;
+
 /**
  *
  * @author ASUS
@@ -15,6 +25,44 @@ public class panelPergantianGuru extends javax.swing.JPanel {
      */
     public panelPergantianGuru() {
         initComponents();
+        customTable();
+    }
+    
+    //custom untuk header tabel
+    private void customTable() {
+    jTable1.setRowHeight(40);
+
+    JTableHeader header = jTable1.getTableHeader();
+    header.setPreferredSize(new Dimension(100, 40));
+
+    header.setDefaultRenderer(new DefaultTableCellRenderer() {
+        @Override
+        public Component getTableCellRendererComponent(
+                JTable table, Object value,
+                boolean isSelected, boolean hasFocus,
+                int row, int column) {
+
+            JLabel label = (JLabel) super.getTableCellRendererComponent(
+                    table, value, isSelected, hasFocus, row, column);
+
+            label.setBackground(new Color(42, 76, 102));
+            label.setForeground(Color.WHITE);
+            label.setFont(new Font("Segoe UI", Font.BOLD, 14));
+            label.setOpaque(true);
+
+            return label;
+        }
+    });
+}
+    
+    //membuat method untuk memanggil pop up JDialog
+    private void popupTambah(java.awt.event.ActionEvent evt){
+        
+        tambahPergantianGuru dialog = new tambahPergantianGuru(
+        (java.awt.Frame) javax.swing.SwingUtilities.getWindowAncestor(this),true
+        );
+        dialog.setLocationRelativeTo(null);
+        dialog.setVisible(true);
     }
 
     /**
@@ -124,6 +172,7 @@ public class panelPergantianGuru extends javax.swing.JPanel {
         BtnTambah.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
         BtnTambah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/icons8_plus.png"))); // NOI18N
         BtnTambah.setText("Tambah");
+        BtnTambah.addActionListener(this::BtnTambahActionPerformed);
         jPanel6.add(BtnTambah);
 
         BtnUbah.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
@@ -145,7 +194,7 @@ public class panelPergantianGuru extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAtasLayout.createSequentialGroup()
-                .addContainerGap(848, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -257,6 +306,11 @@ public class panelPergantianGuru extends javax.swing.JPanel {
 
         add(jPanel5, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahActionPerformed
+        // TODO add your handling code here:
+        popupTambah(evt);
+    }//GEN-LAST:event_BtnTambahActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
