@@ -4,6 +4,7 @@
  */
 package appabsensismpihidayatuttholibin.view;
 
+import appabsensismpihidayatuttholibin.view.componen.dialogPengguna;
 import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -20,6 +21,7 @@ import appabsensismpihidayatuttholibin.view.mainPanel.panelLaporan;
 import appabsensismpihidayatuttholibin.view.mainPanel.panelAbout;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Point;
 
 /**
  *
@@ -110,9 +112,10 @@ public class mainForm extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         panelTengah = new javax.swing.JPanel();
         Header = new javax.swing.JPanel();
-        LMenu = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        bProfil = new javax.swing.JButton();
         tCari = new javax.swing.JTextField();
         panelBottom = new javax.swing.JPanel();
         lTanggalJam = new javax.swing.JLabel();
@@ -329,18 +332,36 @@ public class mainForm extends javax.swing.JFrame {
         Header.setPreferredSize(new java.awt.Dimension(1300, 70));
         Header.setLayout(new java.awt.BorderLayout());
 
-        LMenu.setFont(new java.awt.Font("Poppins SemiBold", 0, 24)); // NOI18N
-        LMenu.setText("     Nama Menu");
-        LMenu.setAlignmentX(0.5F);
-        LMenu.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        LMenu.setInheritsPopupMenu(false);
-        LMenu.setPreferredSize(new java.awt.Dimension(300, 16));
-        Header.add(LMenu, java.awt.BorderLayout.LINE_START);
-
         jPanel1.setBackground(new java.awt.Color(246, 250, 253));
 
         jPanel2.setBackground(new java.awt.Color(246, 250, 253));
-        jPanel2.setLayout(new java.awt.BorderLayout());
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 1, true));
+
+        jLabel1.setFont(new java.awt.Font("Poppins Medium", 0, 16)); // NOI18N
+        jLabel1.setText("Admin");
+        jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 20, 1, 1, new java.awt.Color(255, 255, 255)));
+
+        bProfil.setText("jButton1");
+        bProfil.addActionListener(this::bProfilActionPerformed);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(bProfil, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(bProfil, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         tCari.setFont(new java.awt.Font("Poppins Light", 0, 18)); // NOI18N
         tCari.setText("Cari");
@@ -353,22 +374,25 @@ public class mainForm extends javax.swing.JFrame {
                 tCariFocusLost(evt);
             }
         });
-        jPanel2.add(tCari, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(1016, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(21, 21, 21)
+                .addComponent(tCari, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 626, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tCari, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -491,6 +515,18 @@ public class mainForm extends javax.swing.JFrame {
         cardLayout.show(panelPerpindahan, "about");
     }//GEN-LAST:event_bAboutActionPerformed
 
+    private void bProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProfilActionPerformed
+        // TODO add your handling code here:
+        dialogPengguna menu = new dialogPengguna(this, true);
+        
+        //menampilkan JDialog dibawah button setting
+        Point p = bProfil.getLocationOnScreen();
+        int x = p.x + bProfil.getWidth() - menu.getWidth();
+        int y = p.y +bProfil.getHeight();
+        menu.setLocation(x, y);
+        menu.setVisible(true);
+    }//GEN-LAST:event_bProfilActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -521,7 +557,6 @@ public class mainForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Header;
-    private javax.swing.JLabel LMenu;
     private javax.swing.JToggleButton bAbout;
     private javax.swing.JToggleButton bDashboard;
     private javax.swing.JToggleButton bGenerate;
@@ -532,9 +567,11 @@ public class mainForm extends javax.swing.JFrame {
     private javax.swing.JToggleButton bManual;
     private javax.swing.JToggleButton bPengguna;
     private javax.swing.JToggleButton bPergantian;
+    private javax.swing.JButton bProfil;
     private javax.swing.JToggleButton bQR;
     private javax.swing.JToggleButton bSiswa;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
