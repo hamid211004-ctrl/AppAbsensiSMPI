@@ -4,13 +4,17 @@
  */
 package appabsensismpihidayatuttholibin.view.mainPanel;
 
-import appabsensismpihidayatuttholibin.view.panelTambahan.perKelasLaporan;
+import appabsensismpihidayatuttholibin.view.panelTambahan.perBulanLaporan;
+import appabsensismpihidayatuttholibin.view.panelTambahan.perKelasLaporann;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Frame;
+import java.awt.Point;
 import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.JTableHeader;
 
@@ -19,7 +23,6 @@ import javax.swing.table.JTableHeader;
  * @author ASUS
  */
 public class panelLaporan extends javax.swing.JPanel {
-private perKelasLaporan popupTanggal;
 
     /**
      * Creates new form panelLaporan
@@ -190,6 +193,7 @@ private perKelasLaporan popupTanggal;
 
         BtnBulan.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         BtnBulan.setText("Bulan");
+        BtnBulan.addActionListener(this::BtnBulanActionPerformed);
         jPanel8.add(BtnBulan);
 
         javax.swing.GroupLayout panelAtasLayout = new javax.swing.GroupLayout(panelAtas);
@@ -309,7 +313,29 @@ private perKelasLaporan popupTanggal;
 
     private void BtnTanggalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTanggalActionPerformed
         // TODO add your handling code here:
+        Frame parent = (Frame) SwingUtilities.getWindowAncestor(this);
+        perKelasLaporann menu = new perKelasLaporann(parent, true);
+        
+        //menampilkan JDialog dibawah button setting
+        Point p = BtnTanggal.getLocationOnScreen();
+        int x = p.x;
+        int y = p.y +BtnTanggal.getHeight();
+        menu.setLocation(x, y);
+        menu.setVisible(true);
     }//GEN-LAST:event_BtnTanggalActionPerformed
+
+    private void BtnBulanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBulanActionPerformed
+        // TODO add your handling code here:
+        Frame parent = (Frame) SwingUtilities.getWindowAncestor(this);
+        perBulanLaporan menu = new perBulanLaporan(parent, true);
+        
+        //menampilkan JDialog dibawah button setting
+        Point p = BtnBulan.getLocationOnScreen();
+        int x = p.x;
+        int y = p.y +BtnBulan.getHeight();
+        menu.setLocation(x, y);
+        menu.setVisible(true);
+    }//GEN-LAST:event_BtnBulanActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

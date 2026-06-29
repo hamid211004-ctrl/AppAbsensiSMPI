@@ -105,10 +105,6 @@ public class mainForm extends javax.swing.JFrame {
         bQR = new javax.swing.JToggleButton();
         bManual = new javax.swing.JToggleButton();
         bLaporan = new javax.swing.JToggleButton();
-        bAbout = new javax.swing.JToggleButton();
-        bKeluar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         panelTengah = new javax.swing.JPanel();
         Header = new javax.swing.JPanel();
@@ -133,7 +129,7 @@ public class mainForm extends javax.swing.JFrame {
         buttonGroup1.add(bDashboard);
         bDashboard.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         bDashboard.setForeground(new java.awt.Color(255, 255, 255));
-        bDashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/boxicons_qr-filled (2).png"))); // NOI18N
+        bDashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/duo-icons_dashboard (1).png"))); // NOI18N
         bDashboard.setSelected(true);
         bDashboard.setText("Dashboard");
         bDashboard.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
@@ -250,77 +246,29 @@ public class mainForm extends javax.swing.JFrame {
         bLaporan.addActionListener(this::bLaporanActionPerformed);
         jPanel3.add(bLaporan);
 
-        bAbout.setBackground(new java.awt.Color(39, 81, 103));
-        buttonGroup1.add(bAbout);
-        bAbout.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
-        bAbout.setForeground(new java.awt.Color(255, 255, 255));
-        bAbout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/ix_about (2).png"))); // NOI18N
-        bAbout.setText("About");
-        bAbout.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
-        bAbout.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        bAbout.setIconTextGap(10);
-        bAbout.addActionListener(this::bAboutActionPerformed);
-        jPanel3.add(bAbout);
-
-        bKeluar.setBackground(new java.awt.Color(39, 81, 103));
-        bKeluar.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
-        bKeluar.setForeground(new java.awt.Color(255, 255, 255));
-        bKeluar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/humbleicons_logout (2).png"))); // NOI18N
-        bKeluar.setText("Keluar");
-        bKeluar.setBorderPainted(false);
-        bKeluar.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        bKeluar.setIconTextGap(10);
-        bKeluar.addActionListener(this::bKeluarActionPerformed);
-
-        jLabel2.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(243, 236, 236));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Nama Pengguna");
-
-        jLabel3.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(243, 236, 236));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Email");
-
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/ix_user-profile (1).png"))); // NOI18N
 
         javax.swing.GroupLayout panelSidebarLayout = new javax.swing.GroupLayout(panelSidebar);
         panelSidebar.setLayout(panelSidebarLayout);
         panelSidebarLayout.setHorizontalGroup(
             panelSidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelSidebarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelSidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelSidebarLayout.createSequentialGroup()
-                        .addGroup(panelSidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSidebarLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(83, 83, 83))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSidebarLayout.createSequentialGroup()
-                .addContainerGap(1364, Short.MAX_VALUE)
-                .addGroup(panelSidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(34, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
+            .addGroup(panelSidebarLayout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelSidebarLayout.setVerticalGroup(
             panelSidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelSidebarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(58, 58, 58)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addGap(33, 33, 33)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
+                .addGap(34, 34, 34)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         getContentPane().add(panelSidebar, java.awt.BorderLayout.LINE_START);
@@ -342,6 +290,7 @@ public class mainForm extends javax.swing.JFrame {
         jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 20, 1, 1, new java.awt.Color(255, 255, 255)));
 
         bProfil.setText("jButton1");
+        bProfil.setBorderPainted(false);
         bProfil.addActionListener(this::bProfilActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -351,8 +300,7 @@ public class mainForm extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addComponent(bProfil, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(bProfil, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,11 +383,6 @@ public class mainForm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_bKeluarActionPerformed
-
     
     //Memberi fokus gained agar tulisan di text field kosong saat di klik
     private void tCariFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tCariFocusGained
@@ -510,11 +453,6 @@ public class mainForm extends javax.swing.JFrame {
         cardLayout.show(panelPerpindahan, "laporan");
     }//GEN-LAST:event_bLaporanActionPerformed
 
-    private void bAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAboutActionPerformed
-        // TODO add your handling code here:
-        cardLayout.show(panelPerpindahan, "about");
-    }//GEN-LAST:event_bAboutActionPerformed
-
     private void bProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProfilActionPerformed
         // TODO add your handling code here:
         dialogPengguna menu = new dialogPengguna(this, true);
@@ -557,12 +495,10 @@ public class mainForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Header;
-    private javax.swing.JToggleButton bAbout;
     private javax.swing.JToggleButton bDashboard;
     private javax.swing.JToggleButton bGenerate;
     private javax.swing.JToggleButton bGuru;
     private javax.swing.JToggleButton bKelas;
-    private javax.swing.JButton bKeluar;
     private javax.swing.JToggleButton bLaporan;
     private javax.swing.JToggleButton bManual;
     private javax.swing.JToggleButton bPengguna;
@@ -572,8 +508,6 @@ public class mainForm extends javax.swing.JFrame {
     private javax.swing.JToggleButton bSiswa;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

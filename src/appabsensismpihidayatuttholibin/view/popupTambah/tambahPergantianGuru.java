@@ -4,6 +4,11 @@
  */
 package appabsensismpihidayatuttholibin.view.popupTambah;
 
+import com.formdev.flatlaf.ui.FlatLineBorder;
+import java.awt.Color;
+import java.awt.Insets;
+import javax.swing.JPanel;
+
 /**
  *
  * @author ASUS
@@ -18,6 +23,14 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
     public tambahPergantianGuru(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
+        //supaya JDialognya tranparan jadi roundnya jadi kelihatan dehh
+        this.setBackground(new Color(0, 0, 0, 0));
+        if (this.getContentPane() instanceof javax.swing.JComponent) {
+            ((javax.swing.JComponent) this.getContentPane()).setOpaque(false);
+        }
+        
+        borderLengkung(panelUtama, "#828282");
     }
     
     // membuat method bersih untuk tcari yang apabila diklik tulisan akan hilang
@@ -26,6 +39,17 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
         tMapel.setText("Mapel");
         tJamke.setText("Jam ke");
     }
+    
+    //method untuk custom panel supaya ada roundnya dan bordernya
+    void borderLengkung(JPanel panel, String hexColor) {
+        panel.setBorder(new FlatLineBorder(
+                new Insets(0, 0, 0, 0),
+                Color.decode(hexColor),
+                2f,
+                20
+        ));
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,7 +60,7 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
+        panelUtama = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         lClose = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
@@ -70,9 +94,8 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel3.setBackground(new java.awt.Color(229, 234, 239));
-        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        jPanel3.setLayout(new java.awt.BorderLayout());
+        panelUtama.setBackground(new java.awt.Color(229, 234, 239));
+        panelUtama.setLayout(new java.awt.BorderLayout());
 
         jPanel10.setBackground(new java.awt.Color(229, 234, 239));
         jPanel10.setPreferredSize(new java.awt.Dimension(30, 651));
@@ -96,10 +119,10 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addComponent(lClose, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 740, Short.MAX_VALUE))
+                .addGap(0, 744, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel10, java.awt.BorderLayout.LINE_END);
+        panelUtama.add(jPanel10, java.awt.BorderLayout.LINE_END);
 
         jPanel11.setBackground(new java.awt.Color(229, 234, 239));
         jPanel11.setPreferredSize(new java.awt.Dimension(30, 651));
@@ -112,10 +135,10 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 766, Short.MAX_VALUE)
+            .addGap(0, 770, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel11, java.awt.BorderLayout.LINE_START);
+        panelUtama.add(jPanel11, java.awt.BorderLayout.LINE_START);
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
@@ -132,7 +155,7 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,9 +189,9 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(94, Short.MAX_VALUE)
+                .addContainerGap(96, Short.MAX_VALUE)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,7 +357,7 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
             .addComponent(tJamke, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tMapel)
             .addComponent(cbNamaGuru, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jTGL, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+            .addComponent(jTGL, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
             .addComponent(tID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tTugas)
             .addComponent(cbGuruPengganti, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -379,20 +402,9 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
 
         jPanel1.add(jPanel5, java.awt.BorderLayout.CENTER);
 
-        jPanel3.add(jPanel1, java.awt.BorderLayout.CENTER);
+        panelUtama.add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        getContentPane().add(panelUtama, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -510,7 +522,6 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -518,6 +529,7 @@ public class tambahPergantianGuru extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel8;
     private com.toedter.calendar.JDateChooser jTGL;
     private javax.swing.JLabel lClose;
+    private javax.swing.JPanel panelUtama;
     private javax.swing.JTextField tID;
     private javax.swing.JTextField tJamke;
     private javax.swing.JTextField tKeterangan;
