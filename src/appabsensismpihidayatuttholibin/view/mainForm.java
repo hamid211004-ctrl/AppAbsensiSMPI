@@ -129,7 +129,7 @@ public class mainForm extends javax.swing.JFrame {
         buttonGroup1.add(bDashboard);
         bDashboard.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
         bDashboard.setForeground(new java.awt.Color(255, 255, 255));
-        bDashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/duo-icons_dashboard (1).png"))); // NOI18N
+        bDashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appabsensismpihidayatuttholibin/Icon/material-symbols_dashboard-rounded.png"))); // NOI18N
         bDashboard.setSelected(true);
         bDashboard.setText("Dashboard");
         bDashboard.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));

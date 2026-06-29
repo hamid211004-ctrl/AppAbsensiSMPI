@@ -98,7 +98,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/appabsensismpihidayatuttholibin/Icon/duo-icons_dashboard (1).png"/>
+                  <Image iconType="3" name="/appabsensismpihidayatuttholibin/Icon/material-symbols_dashboard-rounded.png"/>
                 </Property>
                 <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="Dashboard"/>
